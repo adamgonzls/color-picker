@@ -19,7 +19,7 @@ Color picker app built with React
 
 [Color Picker API](https://www.thecolorapi.com/)
 
-<!-- Deployed using [Vite](https://pages.github.com/) -->
+<!-- Deployed using [Vite](https://vitejs.dev/) -->
 
 ## Available Scripts
 
