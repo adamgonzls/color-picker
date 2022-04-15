@@ -1,21 +1,24 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import SchemeDisplay from './components/SchemeDisplay'
 
 function App () {
-  const [count, setCount] = useState(0)
   const [colorSelection, setColorSelection] = useState({
     seedColor: '#f55A5A',
-    colorMode: 'Monochrome'
+    colorMode: 'monochrome'
   })
 
-  console.log(colorSelection)
+  const [scheme, setScheme] = useState([])
 
-  // useEffect(() => {
-  //   console.log('useEffect ran')
-  //   fetch(`https://www.thecolorapi.com/id?hex=${colorScheme.seedColor}`)
-  //     .then(res => res.json())
-  //     .then(data => console.log(data))
-  // }, [])
+  useEffect(() => {
+    console.log('useEffect ran')
+    const colorString = (colorSelection.seedColor).replace(/[^\w ]/, '')
+    const modeString = (colorSelection.colorMode).replace(/[^\w ]/, '')
+    fetch(`https://www.thecolorapi.com/scheme?hex=${colorString}&mode=${modeString}`)
+      .then(res => res.json())
+      .then(data => setScheme(data.colors))
+      .catch((error) => console.log(error))
+  }, [colorSelection])
 
   function handleChange (e) {
     const { name, value } = e.target
@@ -25,12 +28,6 @@ function App () {
         [name]: value
       }
     })
-  }
-
-  function handleCopyText (e) {
-    const { innerText } = e.target
-    console.log(innerText)
-    navigator.clipboard.writeText(innerText)
   }
 
   return (
@@ -60,27 +57,7 @@ function App () {
         </select>
         <button className='picker__submit'>Get color scheme</button>
       </div>
-      <div className='color-display'>
-        <div className='color-display__column' style={{ backgroundColor: '#f55A5A' }}>
-          <span
-            className='color-display__value'
-            onClick={handleCopyText}
-          >#f55A5A
-          </span>
-        </div>
-        <div className='color-display__column' style={{ backgroundColor: '#2B283A' }}>
-          <span className='color-display__value'>#2B283A</span>
-        </div>
-        <div className='color-display__column' style={{ backgroundColor: '#FBF3AB' }}>
-          <span className='color-display__value'>#FBF3AB</span>
-        </div>
-        <div className='color-display__column' style={{ backgroundColor: '#AAD1B6' }}>
-          <span className='color-display__value'>#AAD1B6</span>
-        </div>
-        <div className='color-display__column' style={{ backgroundColor: '#A626D3' }}>
-          <span className='color-display__value'>#A626D3</span>
-        </div>
-      </div>
+      <SchemeDisplay schemeColors={scheme} />
     </main>
   )
 }
