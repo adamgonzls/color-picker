@@ -1,8 +1,8 @@
 # Color Picker
 
-<!-- Check it out: [Color Picker](https://adamgonzls.github.io/random-quote-generator/) -->
+An app that will return color schemes based on a user-selected color and color-combination mode.
 
-Color picker app built with React
+<!-- Check it out: [Color Picker](https://adamgonzls.github.io/random-quote-generator/) -->
 
 ## About this Project
 
@@ -15,11 +15,9 @@ Color picker app built with React
 - npm
 - Vite
 
+Colors and combinations returned via JSON API [Color Picker API](https://www.thecolorapi.com/)
+
 [Figma design file](<https://www.figma.com/file/89fWdvbs8FBNpNAB3U0XBc/Color-Picker-(Copy)?node-id=0%3A1>)
-
-[Color Picker API](https://www.thecolorapi.com/)
-
-<!-- Deployed using [Vite](https://vitejs.dev/) -->
 
 ## Available Scripts
 
@@ -30,3 +28,9 @@ npm install
 # development environment
 npm run dev
 ```
+
+## Deployment
+
+<!-- Deployed using [Vite](https://vitejs.dev/) -->
+
+<!-- Deploy happens upon... -->
