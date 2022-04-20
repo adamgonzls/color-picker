@@ -52,7 +52,7 @@ body {
   box-shadow: 0px 4px 11px 0px #00000026;
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 650px) {
   .header {
     flex-direction: row;
     gap: 0;
@@ -72,7 +72,7 @@ body {
   }
 }
 
-@media screen and (min-width: 630px) {
+@media screen and (min-width: 650px) {
   .picker {
     justify-content: center;
   }
@@ -86,7 +86,6 @@ body {
 .picker__input-color {
   min-height: 40px;
 }
-
 
 .picker__quantity {
   height: 100%;
@@ -163,6 +162,13 @@ body {
 .switch__text {
   font-size: .75rem;
   color: var(--font-color);
+}
+
+@media screen and (max-width: 650px) {
+  .switch__text--none {
+    border: 2px solid green;
+    display: none;
+  }
 }
 
 .color-display {

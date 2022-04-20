@@ -82,7 +82,15 @@ function App () {
 
         </div>
         <div className='switch__container'>
-          <span className='switch__text' style={{ visibility: lightMode ? 'initial' : 'hidden' }}>Light Mode</span>
+          <span
+            className={`switch__text ${!lightMode ? 'switch__text--none' : ''}`}
+            style={{
+              visibility: lightMode
+                ? 'initial'
+                : 'hidden'
+            }}
+          >Light Mode
+          </span>
           <div className='switch__wrapper'>
             <label
               className='switch__label'
