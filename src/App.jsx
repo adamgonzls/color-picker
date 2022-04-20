@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.css'
+import './index.css'
 import SchemeDisplay from './components/SchemeDisplay'
 
 function App () {
@@ -41,7 +41,7 @@ function App () {
       <header className='header'>
         <div className='picker'>
           <input
-            className='picker__input'
+            className='picker__input picker__input-color'
             type='color'
             name='seedColor'
             onChange={handleChange}
@@ -81,21 +81,31 @@ function App () {
           </label>
 
         </div>
-        <div className='switch__wrapper'>
-          <label
-            className='switch__label'
-            htmlFor='switchInput'
-          >
-            <input
-              id='switchInput'
-              type='checkbox'
-              className='switch__input'
-              onClick={handleToggleTheme}
-              value={lightMode}
-            />
-            <div className='switch__slider' />
-          </label>
-          <em className='switch__text'>{lightMode ? 'Light Mode' : 'Dark Mode'}</em>
+        <div className='switch__container'>
+          <span className='switch__text' style={{ visibility: lightMode ? 'initial' : 'hidden' }}>Light Mode</span>
+          <div className='switch__wrapper'>
+            <label
+              className='switch__label'
+              htmlFor='switchInput'
+            >
+              <input
+                id='switchInput'
+                type='checkbox'
+                className='switch__input'
+                onClick={handleToggleTheme}
+                value={lightMode}
+              />
+              <div
+                className='switch__slider'
+                style={
+                  lightMode
+                    ? { backgroundColor: colorSelection.seedColor }
+                    : {}
+                }
+              />
+            </label>
+          </div>
+          <span className='switch__text' style={{ visibility: lightMode ? 'hidden' : 'initial' }}>Dark Mode</span>
         </div>
       </header>
       <SchemeDisplay schemeColors={scheme} />
