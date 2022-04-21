@@ -1,9 +1,6 @@
 export default function SchemeDisplay ({ schemeColors }) {
-  console.log(schemeColors)
-
   function handleCopyText (e) {
     const { innerText } = e.target
-    console.log(innerText)
     navigator.clipboard.writeText(innerText)
   }
 
