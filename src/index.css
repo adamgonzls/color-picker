@@ -1,15 +1,21 @@
 :root {
   --bg-color: #FFF;
-  --font-color: #2B283A;
+  --font-color: var(--steel-grey);
   --white: #FFF;
   --steel-grey: #2B283A;
   --body-font:'Inter', sans-serif;
   --font-medium: 500;
+  --input-font-color: #374151;
+  --input-bg: #FFF;
+  --input-border-color: #D1D5DB;
 }
 
 [data-theme="dark"] {
-  --bg-color: #161625;
-  --font-color: #FFF;
+  --bg-color: #1F293A;
+  --font-color: #D5D4D8;
+  --input-font-color: var(--font-color);
+  --input-bg: #1F293A;
+  --input-border-color: var(--font-color);
 }
 
 html {
@@ -79,8 +85,12 @@ body {
 }
 
 .picker__input {
+  border: 1px solid var(--input-border-color);
   padding: .25em;
   height: 100%;
+  color: var(--input-font-color);
+  background-color: var(--input-bg);
+  border-radius: 6px;
 }
 
 .picker__input-color {
@@ -95,7 +105,7 @@ body {
 .picker__quantity-label {
   display: inline-block;
   font-size: .75rem;
-  color: var(--font-color);
+  color: var(--input-font-color);
 }
 
 .picker__mode {
@@ -161,7 +171,7 @@ body {
 
 .switch__text {
   font-size: .75rem;
-  color: var(--font-color);
+  color: var(--input-font-color);
 }
 
 @media screen and (max-width: 650px) {
