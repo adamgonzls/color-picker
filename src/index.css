@@ -125,7 +125,7 @@ body {
 }
 
 .switch__input:checked + .switch__slider:before {
-  transform: translateX(26px);
+  transform: translateX(-26px);
 }
 
 .switch__label .switch__input {
@@ -138,7 +138,7 @@ body {
 
 .switch__slider {
   border-radius: 34px;
-  background-color: #66bb6a;
+  background-color: #ccc;
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -153,7 +153,7 @@ body {
   bottom: 4px;
   content: "";
   height: 26px;
-  left: 4px;
+  right: 4px;
   position: absolute;
   transition: .4s;
   width: 26px;
@@ -166,26 +166,25 @@ body {
 
 @media screen and (max-width: 650px) {
   .switch__text--none {
-    border: 2px solid green;
     display: none;
   }
 }
 
 .color-display {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 550px) {
   .color-display {
     flex-direction: initial;
   }
 }
 
 .color-display__column {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -194,7 +193,8 @@ body {
   margin-top: auto;
   margin-bottom: 0;
   padding-left: 0;
-  padding: 1.5em;
+  padding-top: .825em;
+  padding-bottom: .825em;
   list-style-type: none;
   cursor: pointer;
   background-color: var(--bg-color);
@@ -202,11 +202,4 @@ body {
   text-align: center;
   font-size: .75rem;
   font-weight: var(--font-medium);
-}
-
-@media screen and (min-width: 500px) {
-  .color-display__values {
-    padding-top: .825em;
-    padding-bottom: .825em;
-  }
 }

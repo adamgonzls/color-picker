@@ -5,13 +5,17 @@ import SchemeDisplay from './components/SchemeDisplay'
 function App () {
   const [colorSelection, setColorSelection] = useState({
     seedColor: '#f55A5A',
-    colorMode: 'monochrome',
+    colorMode: 'analogic',
     colorQuantity: 5
   })
 
   const [scheme, setScheme] = useState([])
 
-  const [lightMode, setLightMode] = useState(true)
+  const [lightMode, setLightMode] = useState(
+    localStorage.getItem('lightMode') !== null
+      ? JSON.parse(localStorage.getItem('lightMode'))
+      : true
+  )
 
   useEffect(() => {
     const colorString = (colorSelection.seedColor).replace(/[^\w ]/, '')
@@ -21,6 +25,10 @@ function App () {
       .then(data => setScheme(data.colors))
       .catch((error) => console.log(error))
   }, [colorSelection])
+
+  useEffect(() => {
+    localStorage.setItem('lightMode', JSON.stringify(lightMode))
+  }, [lightMode])
 
   function handleChange (e) {
     const { name, value } = e.target
@@ -97,11 +105,11 @@ function App () {
               htmlFor='switchInput'
             >
               <input
-                id='switchInput'
                 type='checkbox'
+                id='switchInput'
+                checked={lightMode}
+                onChange={handleToggleTheme}
                 className='switch__input'
-                onClick={handleToggleTheme}
-                value={lightMode}
               />
               <div
                 className='switch__slider'

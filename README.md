@@ -11,6 +11,7 @@ An app that will return color schemes based on a user-selected color and color-c
 - React
 - JavaScript (ES6)
 - JSON API
+- localStorage
 - CSS
 - npm
 - Vite
