@@ -1,8 +1,8 @@
-# Color Picker
+# ColorCrafter
 
-An app that will return color schemes based on a user-selected color and color-combination mode.
+Create color schemes based on a user-selected color and color-combination mode.
 
-Check it out: [Color Picker](https://color-scheme-picker.netlify.app/)
+Check it out: [ColorCrafter](https://colorcrafter.netlify.app/)
 
 ## About this Project
 
