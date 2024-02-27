@@ -3,7 +3,7 @@
   --font-color: var(--steel-grey);
   --white: #fff;
   --steel-grey: #2b283a;
-  --body-font: 'Inter', sans-serif;
+  --body-font: "Inter", sans-serif;
   --font-medium: 500;
   --font-semiBold: 600;
   --input-font-color: #374151;
@@ -11,7 +11,7 @@
   --input-border-color: #d1d5db;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-color: #1f293a;
   --font-color: #d5d4d8;
   --input-font-color: var(--font-color);
@@ -162,7 +162,7 @@ body {
 .switch__slider:before {
   background-color: var(--white);
   bottom: 4px;
-  content: '';
+  content: "";
   height: 26px;
   right: 4px;
   position: absolute;
@@ -216,7 +216,12 @@ body {
 }
 
 .color-display__values li {
+  padding-top: 0.75em;
   transition: all 0.1s ease-in-out;
+}
+
+.color-display__values li:first-child {
+  padding-top: 0;
 }
 
 .color-display__values li:hover,
@@ -228,8 +233,5 @@ body {
 @media screen and (min-width: 550px) {
   .color-display__values {
     margin-bottom: auto;
-  }
-  .color-display__values li {
-    padding: 0.75em;
   }
 }
